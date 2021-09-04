@@ -1,0 +1,58 @@
+/*WELCOME IMG*/
+.home_container {
+  display: flex;
+  height: 17.5rem;
+  background: var(--grey);
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+
+.home_container .home_text {
+  width: 15.625rem;
+}
+.home_container h3 {
+  justify-self: left;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1.75rem;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--dark-grey);
+}
+.home_container h2 {
+  font-family: 'Kaushan Script', sans-serif;
+  font-size: 3.75rem;
+  color: var(--blue);
+  line-height: 1.8rem;
+  font-weight: 400;
+}
+
+/*MENU*/
+#menu .main_menu_wrapper {
+  display: grid;
+  gap: 1.275rem;
+}
+#menu .grid {
+  transition: 0.5s;
+  margin-top: 1rem;
+  display: grid;
+  gap: 1.375rem;
+  list-style: none;
+  margin-left: 2rem;
+
+  font-family: 'Source Sans Pro';
+  font-size: 1rem;
+  color: var(--dark-blue);
+  max-height: 30rem;
+
+  overflow: scroll;
+}
+
+#menu .grid li {
+  transition: 0.3s;
+}
+#menu .grid li:hover {
+  font-size: 1.1rem;
+}
+
+/*Secondary menu*/
