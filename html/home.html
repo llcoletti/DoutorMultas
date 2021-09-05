@@ -14,12 +14,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Source+Sans+Pro:ital,wght@0,400;1,400;1,600;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Kaushan+Script&family=Source+Sans+Pro:ital,wght@0,400;0,700;1,400;1,600;1,700&display=swap"
       rel="stylesheet"
     />
 
     <!--Icons-->
-    <link rel="stylesheet" href="\assets\style.css" />
+    <link rel="stylesheet" href="/assets/style.css" />
   </head>
   <body>
     <header id="header" class="home_logo">
@@ -41,13 +41,13 @@
       </section>
 
       <section id="menu">
-        <div class="main_menu_wrapper">
+        <div class="main_menu_wrapper wrapper show">
           <div class="menu_cars">
             <button class="button_cars buttom">
               <h2>Carros</h2>
-              <i class="icon-arrow-up icon toggle"></i>
+              <i class="icon-arrow-up icon"></i>
             </button>
-            <ul class="grid show">
+            <ul class="grid">
               <li>Fabricante 1</li>
               <li>Fabricante 2</li>
               <li>Fabricante 3</li>
@@ -70,12 +70,12 @@
               <li>Fabricante 20</li>
             </ul>
           </div>
-          <div class="menu_motorcycle">
-            <button class="button_motorcycle buttom">
+          <div class="menu_motorcycles">
+            <button class="button_motorcycles buttom">
               <h2>Motos</h2>
-              <i class="icon-arrow-up icon toggle"></i>
+              <i class="icon-arrow-up icon"></i>
             </button>
-            <ul class="grid hidden">
+            <ul class="grid">
               <li>Fabricante 1</li>
               <li>Fabricante 2</li>
               <li>Fabricante 3</li>
@@ -86,9 +86,9 @@
           <div class="menu_trucks">
             <button class="button_trucks buttom">
               <h2>Caminhões</h2>
-              <i class="icon-arrow-up icon toggle"></i>
+              <i class="icon-arrow-up icon"></i>
             </button>
-            <ul class="grid hidden">
+            <ul class="grid">
               <li>Fabricante 1</li>
               <li>Fabricante 2</li>
               <li>Fabricante 3</li>
@@ -97,7 +97,37 @@
             </ul>
           </div>
         </div>
+        <div class="secondary_menu_wrapper wrapper">
+          <h2>Fabricante 08</h2>
+          <ul class="grid">
+            <li>Modelo do veículo 1</li>
+            <li>Modelo do veículo 2</li>
+            <li>Modelo do veículo 3</li>
+            <li>Modelo do veículo 4</li>
+            <li>Modelo do veículo 5</li>
+            <li>Modelo do veículo 6</li>
+            <li>Modelo do veículo 7</li>
+            <li>Modelo do veículo 8</li>
+            <li>Modelo do veículo 9</li>
+            <li>Modelo do veículo 10</li>
+            <li>Modelo do veículo 11</li>
+            <li>Modelo do veículo 12</li>
+            <li>Modelo do veículo 13</li>
+            <li>Modelo do veículo 14</li>
+            <li>Modelo do veículo 15</li>
+          </ul>
+          <a href="#home" class="return_button show"
+            ><i class="icon-arrow-up"></i
+          ></a>
+        </div>
       </section>
+
+      <footer>
+        <div></div>
+      </footer>
     </main>
+
+    <!--main.js-->
+    <script src="/javascript/main.js"></script>
   </body>
 </html>

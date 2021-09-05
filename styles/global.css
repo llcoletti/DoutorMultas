@@ -11,7 +11,7 @@ html {
   height: 100%;
 }
 main {
-  height: auto;
+  height: 100vh;
 }
 
 /*Variables*/
@@ -35,11 +35,11 @@ html {
   background: var(--white);
 }
 
-.main_menu_wrapper {
+/* .wrapper {
   display: grid;
   margin-top: 2.5rem;
   padding: 0rem 2rem;
-}
+} */
 
 .buttom {
   background: var(--dark-blue);
@@ -73,22 +73,28 @@ html {
 
 /* main menu */
 #menu .main_menu_wrapper {
-  transition: 0.5s;
-}
-#menu .main_menu_wrapper.hidden {
+  margin-top: 2.5rem;
+  padding: 0rem 2rem;
   transition: 0.5s;
   display: none;
+  gap: 2rem;
 }
-
+#menu .main_menu_wrapper.show {
+  transition: 0.5s;
+  display: grid;
+}
 /*sub-menus*/
-#menu .grid.hidden {
+#menu .grid {
   display: none;
 }
 
-#menu .grid.show {
+#menu .menu_cars .grid.show,
+#menu .menu_motorcycles .grid.show,
+#menu .menu_trucks .grid.show {
   display: grid;
 }
 
+/*Secondary menu*/
 ::-webkit-scrollbar {
   width: 0.4rem;
 }
@@ -97,5 +103,27 @@ html {
   border-radius: 5px;
   background-color: var(--grey);
 }
-::-webkit-scrollbar-track {
+
+/* Back to top */
+.return_button {
+  background: var(--blue);
+  color: var(--white);
+
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+
+  clip-path: circle();
+  font-size: 2rem;
+  line-height: 0;
+  transform: rotate(-90deg);
+  visibility: hidden;
+  opacity: 0;
+}
+.return_button.show {
+  visibility: visible;
+  opacity: 1;
+}
+body {
+  height: 100rem;
 }
