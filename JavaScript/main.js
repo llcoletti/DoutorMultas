@@ -1,7 +1,7 @@
 const mainMenu = document.querySelector('.main_menu_wrapper')
 const secondaryMenu = document.querySelector('.secondary_menu_wrapper')
 const returnButton = document.querySelector('.return_button')
-const fabricSelect = document.querySelectorAll('.main_menu_wrapper ul li')
+const fabricSelect = document.querySelectorAll('#menu .grid li')
 const footer = document.querySelector('.footer_wrapper')
 
 /*Fabricante select*/

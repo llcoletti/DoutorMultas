@@ -6,6 +6,16 @@
   text-decoration: none;
   box-sizing: border-box;
 }
+body,
+html {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  overflow-x: hidden;
+}
+main {
+  min-height: 82.5vh;
+}
 
 /*Variables*/
 html {
@@ -127,17 +137,6 @@ html {
 .return_button:hover {
   filter: brightness(1.4);
   font-size: 2.5rem;
-}
-
-body,
-html {
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  overflow-x: hidden;
-}
-main {
-  min-height: 82.5vh;
 }
 
 #footer .footer_wrapper {
