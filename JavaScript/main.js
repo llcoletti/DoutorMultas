@@ -1,19 +1,8 @@
 const mainMenu = document.querySelector('.main_menu_wrapper')
 const secondaryMenu = document.querySelector('.secondary_menu_wrapper')
 const returnButton = document.querySelector('.return_button')
-const fabricSelect = document.querySelectorAll('#menu .grid li')
 const footer = document.querySelector('.footer_wrapper')
 
-/*Fabricante select*/
-
-for (const element of fabricSelect) {
-  element.addEventListener('click', function () {
-    footer.classList.add('hidden')
-    secondaryMenu.classList.toggle('show')
-    mainMenu.classList.remove('show')
-    returnButton.classList.add('show')
-  })
-}
 /*PAGE RETURN*/
 returnButton.addEventListener('click', function () {
   footer.classList.remove('hidden')
