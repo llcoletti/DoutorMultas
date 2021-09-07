@@ -2,13 +2,32 @@ const mainMenu = document.querySelector('.main_menu_wrapper')
 const secondaryMenu = document.querySelector('.secondary_menu_wrapper')
 const returnButton = document.querySelector('.return_button')
 const footer = document.querySelector('.footer_wrapper')
+const fabricante = document.querySelector('.secondary_menu_wrapper #fabricante')
+const fabricanteh2 = document.querySelector('.secondary_menu_wrapper #fabricante h2')
+/*Fabricante select*/
 
+/*Com a adição da API da tabela FIPE essa função não manteve seu funcionamento.
+Para contornar a situação foi aplicado um event listener na propria função que traz os elementos da api para dentro do html.*/
+
+/* for (const element of fabricSelect) {
+  element.addEventListener('click', function () {
+    footer.classList.add('hidden')
+    secondaryMenu.classList.toggle('show')
+    mainMenu.classList.remove('show')
+    returnButton.classList.add('show')
+  })
+} */
 /*PAGE RETURN*/
 returnButton.addEventListener('click', function () {
   footer.classList.remove('hidden')
   mainMenu.classList.toggle('show')
   secondaryMenu.classList.remove('show')
   returnButton.classList.remove('show')
+
+  //Caso alguma marca ja tenha sido selecionada anteriormente, remove-a.
+  while (fabricante.firstChild) {
+    fabricante.removeChild(fabricante.lastChild);
+  }
 })
 
 /*Main menu - sub menus - arrow movement*/

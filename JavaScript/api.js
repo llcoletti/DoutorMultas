@@ -5,15 +5,15 @@ fetch('https://parallelum.com.br/fipe/api/v1/carros/marcas')
   .then(jsonResponse =>{       
     
     //retorna somente o nome dos veículos 
-    const dataCars = jsonResponse.map(modelo =>{             
+    const dataCars = jsonResponse.map(modelo =>{                 
       return `<li>${modelo.nome}</li>` // modelo.nome modelo.codi go
-    })
+    })    
     
-      
+      console.log(dataCars)
     //remove as "," do array e insere os elementos no HTML
       const carModel = dataCars.join(" ") //Car model -> String
       document.querySelector("#carsList").insertAdjacentHTML("afterbegin", carModel)    
-      
+      //console.log(carModel) retorno string: <li>1 Acura</li> <li>2 Agrale</li>    
       
       
       const fabricSelect = document.querySelectorAll('#menu .menu_cars .grid li')     
@@ -30,7 +30,7 @@ fetch('https://parallelum.com.br/fipe/api/v1/carros/marcas')
           
           
           //atribui o elemento clicado ao fabricante.          
-          //regEx remove elementos html concatenado com a tag desejada
+            //regEx remove elementos html concatenado com a tag desejada
            document.querySelector("#fabricante").insertAdjacentHTML("afterbegin",`<h2>${element.outerHTML.replace(/<(?:.|\n)*?>/gm, '')}</h2>`)
         })
       }
