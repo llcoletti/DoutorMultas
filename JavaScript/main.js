@@ -3,7 +3,7 @@ const secondaryMenu = document.querySelector('.secondary_menu_wrapper')
 const returnButton = document.querySelector('.return_button')
 const footer = document.querySelector('.footer_wrapper')
 const fabricante = document.querySelector('.secondary_menu_wrapper #fabricante')
-const fabricanteh2 = document.querySelector('.secondary_menu_wrapper #fabricante h2')
+const modelo = document.querySelector('.secondary_menu_wrapper .grid')
 /*Fabricante select*/
 
 /*Com a adição da API da tabela FIPE essa função não manteve seu funcionamento.
@@ -27,6 +27,11 @@ returnButton.addEventListener('click', function () {
   //Caso alguma marca ja tenha sido selecionada anteriormente, remove-a.
   while (fabricante.firstChild) {
     fabricante.removeChild(fabricante.lastChild);
+  }
+
+  //Caso alguma modelo ja tenha sido selecionada anteriormente, remove-a.
+  while (modelo.firstChild) {
+    modelo.removeChild(modelo.lastChild);
   }
 })
 

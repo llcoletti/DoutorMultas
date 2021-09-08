@@ -2,40 +2,53 @@
 
 fetch('https://parallelum.com.br/fipe/api/v1/carros/marcas')
   .then(res =>res.json())
-  .then(jsonResponse =>{       
-    
-    //retorna somente o nome dos veículos 
-    const dataCars = jsonResponse.map(modelo =>{                 
-      return `<li>${modelo.nome}</li>` // modelo.nome modelo.codi go
+  .then(jsonResponse =>{
+    const dataCars = jsonResponse.map(fabricante =>{              
+      return `<li>${fabricante.nome} <p>${fabricante.codigo}</p></li> `
     })    
-    
-      console.log(dataCars)
-    //remove as "," do array e insere os elementos no HTML
-      const carModel = dataCars.join(" ") //Car model -> String
-      document.querySelector("#carsList").insertAdjacentHTML("afterbegin", carModel)    
-      //console.log(carModel) retorno string: <li>1 Acura</li> <li>2 Agrale</li>    
-      
-      
-      const fabricSelect = document.querySelectorAll('#menu .menu_cars .grid li')     
+    //remove as "," do array e insere os elementos no HTML    
+    const carModel = dataCars.join(" ")
+    document.querySelector("#carsList").insertAdjacentHTML("afterbegin", carModel) 
+    const fabricSelect = document.querySelectorAll('#menu .menu_cars .grid li')     
       
       //Define event listener para os elementos adicionados ao HTML
-      for (const element of fabricSelect){       
-        
-        element.addEventListener('click', function() {
-          //altera para o menu secundário
-          footer.classList.add('hidden')
-          secondaryMenu.classList.toggle('show')
-          mainMenu.classList.remove('show')
-          returnButton.classList.add('show')
-          
-          
-          //atribui o elemento clicado ao fabricante.          
-            //regEx remove elementos html concatenado com a tag desejada
-           document.querySelector("#fabricante").insertAdjacentHTML("afterbegin",`<h2>${element.outerHTML.replace(/<(?:.|\n)*?>/gm, '')}</h2>`)
-        })
-      }
-  })
-
+    for (const element of fabricSelect){
+      //altera para o menu secundário
+      element.addEventListener('click', function() {
+        footer.classList.add('hidden')
+        secondaryMenu.classList.toggle('show')
+        mainMenu.classList.remove('show')
+        returnButton.classList.add('show')                        
+        //atribui o elemento clicado ao fabricante.          
+        //regEx remove elementos html concatenado com a tag desejada       
+        document.querySelector("#fabricante").insertAdjacentHTML("afterbegin",`<h2>${element.outerHTML.replace(/<(?:.|\n)*?>/gm, '').replace(/\d+/g, '')}</h2>`)
+        //atribui código do vehículo a uma constante
+        const carCod = element.outerHTML.replace(/\D/g, "")
+        //Submenu
+        fetch(`https://parallelum.com.br/fipe/api/v1/carros/marcas/${carCod}/modelos`)
+          .then(res =>res.json())
+          .then(jsonResponse =>{       
+            console.log(jsonResponse.modelos)
+            const modeloCarro = jsonResponse.modelos.map(modelo =>{
+              return `<li>${modelo.nome}</li>`
+            })
+            //Coloca os modelos em ordem decrescente
+            ordenaModelo = modeloCarro.sort((a, b)=>{
+              if(a>b)
+              return -1;
+              if(a<b){
+                return 1;                  
+              }
+              return 0;
+            })
+            document.querySelector("#modelList").insertAdjacentHTML("afterbegin", ordenaModelo.join(" "))
+          })
+        }
+      )
+    }
+  }
+)
+  
   
 /*motorcycles*/
 fetch('https://parallelum.com.br/fipe/api/v1/motos/marcas')
